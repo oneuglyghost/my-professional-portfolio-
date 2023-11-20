@@ -1,0 +1,75 @@
+
+:root{
+    --green: #61E9CD;
+    --backgroud: #142239;
+    --overlay-color: #61e9ce80;
+}
+
+* {
+    background-color: var(--backgroud);
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    color: var(--green);
+    padding: 10px;
+    position: relative;
+}
+h1 {
+    line-height: 60px;
+}
+/* the decorative lines in my page */
+.deco-line {
+    position: absolute;
+    background-color: #fff;
+    height: 2px;
+    bottom: 60px;
+    display:inline-block;
+    margin-left: 10px;
+    right: 30px;
+    left: 190px;
+}
+.square-border {
+    text-align: center;
+    
+}
+/* the boder around profile picture */
+.square {
+    position: absolute;
+    top: 120px;
+    left: 90px;
+    width: 150px; 
+    height: 150px;
+    border: 3px solid var(--green); 
+    z-index: 1;
+    
+}
+.second-square img {
+    width: 100%; /* Make the image fill the square */
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+}
+/* this is the second square in the back */
+.second-square {
+    position: absolute;
+    top: 130px;
+    left: 80px;
+    width: 150px; 
+    height: 150px;
+    border: 3px solid var(--green); 
+    z-index: 1;
+}
+/* did this to add a color tint to my image */
+.second-square::before{
+    content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--overlay-color);
+}
