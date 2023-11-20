@@ -1,7 +1,7 @@
 
 :root{
     --green: #61E9CD;
-    --backgroud: #142239;
+    --background: #142239;
     --overlay-green: #61e9ce43;
 }
 
@@ -10,35 +10,72 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-color: var(--backgroud);
+    background-color: var(--background);
 }
 
 header {
     color: var(--green);
     padding: 10px;
     position: relative;
+    padding-left: 30px;
 }
+
 h1 {
     line-height: 60px;
 }
+
 /* the decorative lines in my page */
 .deco-line {
     position: absolute;
     background-color: #fff;
     height: 2px;
     display:inline-block;
-    margin-left: 10px;
 }
+
 #deco-line-header {
     bottom: 60px;
     right: 30px;
     left: 190px;
+    margin-left: 30px;
+    position: absolute;
 }
+
+#deco-line-About-me {
+    top: 310px;
+    right: 30px;
+    left: 190px;
+    margin-left: 50px;
+    
+}
+
+#deco-line-work {
+    top: 73.3%; 
+    right: 30px;
+    left: 190px;
+    
+}
+
+/*here to move the decoration line on the left of all h2 elements */
+.deco-line-left {
+    left: 30px;
+    width: 38px;
+}
+
+#deco-line-About-me-left {
+    top: 310px;
+}
+
+#deco-line-work-left {
+    top: 73.3%; 
+    left: 30px;
+    transform: translateY(-50%);
+}
+/* the boder around profile picture */
 .square-border {
     text-align: center;
     
 }
-/* the boder around profile picture */
+
 .square {
     position: absolute;
     top: 120px;
@@ -74,7 +111,7 @@ h1 {
             height: 100%;
             background: var(--overlay-green);
 }
-/* the navigation menue */
+/* the navigation menu */
 .navigation {
     display: flex;
     justify-content: center;
@@ -99,4 +136,26 @@ h1 {
     color:var(--green);
     text-decoration: none;
     font-size: 16px;
+}
+/* About me section */
+h2 {
+    color: var(--green);
+    padding-left: 79px;
+    position: relative;
+}
+#work {
+    position: absolute;
+    top: 69%;
+}
+p {
+    color: #fff;
+    text-align: left;
+    padding-left: 30px;
+    padding-right: 30px;
+    line-height: 2;
+    margin-bottom: 0;
+}
+
+.highlight {
+    color: var(--green);
 }
