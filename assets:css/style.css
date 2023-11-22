@@ -197,9 +197,46 @@ p {
     right: 30px;
     left: 206px;
 }
-footer a{
-   color: #fff;
-   padding: 5px;
-   display: inline-block;
 
+footer {
+   text-align: right;
+   display: flex;
+   align-items: center;
+   justify-content: flex-end;
 }
+footer div {
+    margin-right: 30px;
+    padding-top: 2px;
+}
+i {
+    color: #fff;
+}
+/*-----settings for the hover effect on the footer-----*/
+.offset-border {
+    position: relative;
+    transition: box-shadow 0.3s ease; /* Add a smooth transition effect on hover */
+}
+
+.offset-border:hover {
+    box-shadow: 0 0 0 20px #333; /* Adjust the last value (10px) to control the border offset on hover */
+}
+
+footer div span { 
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 70%;
+    transform: translateX(-50%);
+    background-color:var(--green);
+    color: var(--background);
+    padding: 5px;
+    border-radius: 0px;
+    margin-top: 39%;
+    white-space: nowrap;
+}
+footer div:hover span{
+    display: inline-block;
+}
+
+/*-----makes an off set effect using the border setting----*/
+
