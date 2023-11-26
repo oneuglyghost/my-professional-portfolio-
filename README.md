@@ -5,4 +5,3 @@ In this project I got to practice using the skill i have learned so far includin
 
 https://oneuglyghost.github.io/my-professional-portfolio-/
 
-![](assets:css/images/Screenshot%202023-11-25%20at%2010.07.17%E2%80%AFPM%20(2).png)
