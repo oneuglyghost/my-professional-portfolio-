@@ -2,8 +2,6 @@
 :root{
     --green: #61E9CD;
     --background: #142239;
-    --hover-green: #00ff88;
-    /*--overlay-green: #61e9ce43;*/
 }
 
 
@@ -177,6 +175,24 @@ p {
     margin-top: 20px;
     border: 3px solid var(--green); 
     max-width: 391px;
+    position: relative;
+}
+
+.text-box {
+    position: absolute;
+    padding: 1px;
+    top: 74%;
+    right: .5%;
+    height: 54px;
+    background-color:var(--background); 
+    color: #fff;
+    border: var(--green) solid;
+    text-align: center;
+    opacity: 0; 
+    transition: opacity 0.3s ease;
+}
+.work-border:hover .text-box {
+    opacity: 1; /* Show the text on hover */
 }
 
 .work-border:last-child {
