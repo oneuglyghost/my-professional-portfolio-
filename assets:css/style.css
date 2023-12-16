@@ -3,18 +3,21 @@
     src: url(./Glass_TTY_VT220.ttf);
 }
 :root{
-    --green: #61E9CD;
-    --background: #142239;
-    --Terminal:  rgb(11, 169, 5);
+    --border-color: #056502;
+    --green: #08a702;
+    --green-selected: #0cfc03;
+    --background:#254434;
+    --Terminal-background:  rgb(11, 169, 5);
+    --white: #fff;
 }
 
 
 body {
-
     padding: 0;
     font-family: Glass_TTY;
-    background-color: var(--background);
+    background: radial-gradient(circle, #192e23, #000000);
 }
+
 
 header {
     color: var(--green);
@@ -22,15 +25,10 @@ header {
     position: relative;
     padding-left: 30px;
 }
-.gapBackground {
-    background-color: var(--background);
-    padding: 10px;
-    margin-left: 90px;
-}
+
 
 h1 {
     font-size: 30px;
-    background-color: var(--background);
     padding: 5px;
     
 }
@@ -44,7 +42,8 @@ h1 {
 
 .deco-line {
     position: absolute;
-    background-color: #fff;
+    margin-top: 25px;
+    background-color:var(--border-color);
     height: 2px;
     z-index: -3;
     right: 30px;
@@ -64,26 +63,15 @@ h1 {
     width: 30%;
     min-width: 150px;
     max-width: 250px;
-    border: 3px solid var(--green);
+    border: 3px solid var(--border-color);
     position: relative;
 }
-.profile-square::after {
-    content: '';
-    position: absolute;
-    top: -10px;
-    right: -10px;
-    bottom: 6px; 
-    left: 6px; 
-    outline: 3px solid var(--green);
-    background-color: var(--background); 
-    z-index: -1; /* makes it show up behid square */
-}
+
 
 /* the navigation menu */
 .navigation {
     position: absolute;
-    top: 16vh;
-    left: 60vw;
+    top: 17vh;
     justify-content: center;
     margin-top: -50px;
     z-index: 2;
@@ -94,45 +82,34 @@ h1 {
 }
 
 .navigation li {
-    margin-right: 40px;
+    margin-right: 15px;
     padding-top: 30px;
     min-width: 101px;    
 }
 
 .navigation a {
     text-decoration: none;
-    color: #fff;;
+    color: var(--green);
     font-size: 16px;
-    border: 3px solid var(--green);
     padding: 5px;
     width: 140px;
     transition: color 0.3s ease;
     position: relative;
-    background-color: var(--background);
+    
     display: flex;
     justify-content: center;   
-    
+    border: 3px solid var(--border-color);
 }
-.navigation ul a::after {
-    background-color: var(--backgrou);
-    content: '';
-    position: absolute;
-    top: -5px;
-    right: -5px;
-    bottom: 6px;
-    left: 6px; 
-    outline: 3px solid var(--green);
-    z-index: -2; /* makes it show up behid square */
-    background-color:var(--background);
-}
+
 .navigation a:hover{
-    color: var(--green);
-    background-color:black;
+    color: var(--green-selected);
+    background-color:var(--background);
+    
 }
 .hover-select:hover::before {
     content: ">";
     padding-right: 2px;
-    color:var(--green); /* Change the color when hovering */
+    color:var(--green-selected); /* Change the color when hovering */
     animation: blink 1s infinite;
 }
 
@@ -149,20 +126,24 @@ h2 {
     position: relative;
 }
 
-#deco-line-work { 
-    right: 30px;
-    left: 185px;
-}
-
 p {
     padding-top: 30px;
-    color: #fff;
+    color: var(--green);
     text-align: left;
     padding-left: 30px;
     padding-right: 30px;
     line-height: 2;
     margin-bottom: 0;
+    
 }
+
+
+/*---highlighted words---*/
+mark{
+    background-color: var(--green);
+    font-weight: bold;
+}
+
 .typingAnimation::after{
     content: "";
     position: relative;
@@ -176,66 +157,49 @@ p {
     animation: blink 1s infinite;
 }
 
-.highlight {
-    color: var(--green);
-}
-
 /* past work example section */
 .work-container {
-    margin: 0 30px;
-    overflow: hidden;
-    width: 100%;
+    margin-left: 30px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
-#first-work {
-    width: calc(100% - 60px); 
-    max-width: 826px;
-}
-
-.work-border {
-    width: calc((100% - 60px - 26px) / 2); 
-    float: left;
-    margin-right: 1.6rem; 
+.work-border { 
     margin-top: 20px;
-    border: 3px solid var(--green); 
-    max-width: 391px;
-    position: relative;
-}
-
-.text-box {
-    position: absolute;
-    top: 60%;
-    right: .5%;
-    padding: 10px;
-    height: 70px;
-    background-color:black; 
-    color: var(--green);
-    border: var(--green) solid;
-    text-align: center;
-    opacity: 0; 
-    transition: opacity 0.3s ease;
-}
-.text-box p li{
-    height: 90%;
-    text-align: center;
-    top: auto;
-}
-.work-border:hover .text-box {
-    opacity: 1; /* Show the text on hover */
-}
-
-.work-border:last-child {
-    margin-right: 0px; /* Remove margin on the last smaller image to get riid of extra space */
+    border: 3px solid var(--border-color); 
+    min-width: 200px;
+    
 }
 
 .work-border img {
     width: 100%;
-    height: auto;
-    display: block;
 }
+.tint::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #056502a0;
+    pointer-events: none;
+}
+#text-box-flex{
+    display: flex;
+    flex-direction: row;
+    margin-right: 30px;
+}
+.description-Box {
+    flex: 1;
+    padding: 20px;
+    background: #254434d1;
+    margin-left: 30px;
+    margin-top: 20px;
+}   
 
 /*----fotter section----*/ 
-
+.h-possition
 #deco-line-contact { 
     right: 30px;
     left: 206px;
@@ -249,10 +213,11 @@ footer {
 }
 footer div {
     margin-right: 30px;
-    padding-top: 2px;
+    padding-top: 10px;
+    margin-bottom: 30px;
 }
 i {
-    color: #fff;
+    color: var(--border-color);
 }
 /*-----settings for the hover effect on the footer-----*/
 i:hover{
@@ -260,7 +225,7 @@ i:hover{
 }
 .iconHover:hover::before{
     content: ">";
-    color: var(--green);
+    color: var(--green-selected);
     animation: blink 1s infinite;
 }
 
@@ -268,41 +233,37 @@ footer div span {
     display: none;
     position: absolute;
     right: 5%;
-    background-color:black;
-    color: var(--green);
+    color: var(--green-selected);
     padding: 5px;
     margin-top: -60px;
     white-space: nowrap;
-    outline: 3px solid var(--green);
+    outline: 3px solid var(--border-color);
 }
-footer div span::after{
-    content: '';
-    position: absolute;
-    top: -5px;
-    right: -5px;
-    bottom: 6px;
-    left: 6px; 
-    outline: 3px solid var(--green);
-    background-color: black;
-    z-index: -2;
-}
+
 footer div:hover span{
     display: inline-block;
     align-items: flex-end;
 }
 
-@media screen and (max-width: 499px) {
-    .navigation a {
-        font-size: 12px;
+
+@media screen and (min-width: 500px){
+    .navigation {
+        position: absolute;
+        top: 100px; 
+        right: 15px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin-top: 0;
     }
 }
 
-@media screen and (min-width: 710px) {
+@media screen and (min-width: 830px) {
     /*--to resize nav to adjust for difrent screens--*/
     .navigation {
         position: absolute;
-        top: 55px; 
-        right: 3%;
+        top: 100px; 
+        right: 15px;
         display: flex;
         justify-content: flex-end;
         align-items: center;
@@ -324,13 +285,13 @@ footer div:hover span{
 
     .navigation a {
         padding: 5px; 
-        border: 3px solid var(--green);
+        
     }
     /*--to resize about-me to adjust for difrent screens--*/
    
     .about-me{
         position: absolute;
-        top: 60px;
+        top: 15VH;
         left: 310px;
     }
 }
