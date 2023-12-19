@@ -76,17 +76,21 @@ h1 {
     margin-top: -50px;
     z-index: 2;
     margin-left: 198px;
+    
 }
 
 .navigation ul {
     list-style-type: none;
+    
 }
 
 .navigation li {
     margin-right: 15px;
     padding-top: 30px;
     min-width: 101px;    
+    
 }
+
 
 .navigation a {
     text-decoration: none;
@@ -96,10 +100,10 @@ h1 {
     width: 140px;
     transition: color 0.3s ease;
     position: relative;
-    
     display: flex;
-    justify-content: center;   
+    justify-content: left;   
     border: 3px solid var(--border-color);
+    
 }
 
 .navigation a:hover{
@@ -198,10 +202,54 @@ mark{
     margin-left: 30px;
     margin-top: 20px;
     padding: 5px;
+    height:fit-content;
 }
 #work-Tittle {
     padding: 0;
+    text-align: center;
+    font-size: 30px;
 }
+#description-tittle{
+    text-decoration: underline;
+    color: var(--green);
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+#work-Description {
+    color: var(--green);
+}
+#tools-list{
+    text-decoration: underline;
+    color: var(--green);
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+#work-tools {
+    color: var(--green);
+    list-style-type: disc;
+    padding-left: 15px;
+    margin-bottom: 30px;
+}
+#work-link {
+    display: none;
+    box-sizing: border-box;
+    color: var(--green);
+    text-decoration: none;
+    padding: 5px 10px;
+    width: fit-content;
+    border: 3px solid var(--border-color);
+    margin-left: 45%;
+    margin-bottom: 30px;
+}
+#work-link:hover{
+    background: #254434;
+    border: 3px solid var(--border-color);
+    color: var(--green-selected);
+}
+#work-link:hover::before{
+    content: ">";
+}
+
 
 /*----fotter section----*/ 
 .h-possition
@@ -248,6 +296,12 @@ footer div span {
 footer div:hover span{
     display: inline-block;
     align-items: flex-end;
+}
+
+#typed-text {
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid; /* Add a cursor effect */
 }
 
 
