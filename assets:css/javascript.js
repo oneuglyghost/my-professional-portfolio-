@@ -32,7 +32,7 @@ document.addEventListener('click', function (event) {
 
         if (job == clickElementId){  // checks if any property in Work matches the clicked id 
             // adds text to the element with that id
-            document.getElementById("work-Tittle").innerHTML = '<mark>' + Work[job] + '</mark>';
+            document.getElementById("work-Tittle").innerHTML = Work[job] ;
         
             if (workDescription[job]) {
                 animateText("work-Description", workDescription[job]);
