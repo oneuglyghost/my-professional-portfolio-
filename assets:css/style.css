@@ -63,7 +63,7 @@ h1 {
     width: 30%;
     min-width: 150px;
     max-width: 250px;
-    box-shadow: 0 0 16px var(--green-selected);
+    box-shadow: 0 0 16px var(--border-color);
     position: relative;
 }
 
@@ -153,13 +153,24 @@ mark{
     content: "";
     position: relative;
     top: -11px;
-    left: -10px;
+    left: 0;
     display: inline-block;
     background-color: var(--green);
     vertical-align: bottom;
     width: 8px;
     height: 16px;
     animation: blink 1s infinite;
+}
+.typingAnimation-Description::after{
+    content: "";
+    position: relative;
+    display: inline-block;
+    background-color: var(--green);
+    vertical-align: bottom;
+    width: 8px;
+    height: 16px;
+    animation: blink 1s infinite;
+
 }
 
 /* past work example section */
@@ -248,6 +259,7 @@ mark{
 }
 #work-link:hover::before{
     content: ">";
+    animation: blink 1s infinite;
 }
 
 
@@ -304,6 +316,23 @@ footer div:hover span{
     border-right: 2px solid; /* Add a cursor effect */
 }
 
+/*-- changing the image on hover --*/
+#profile-image-change:hover img {
+    content: url('./images/profile/profile.jpeg');
+}
+#first-job-image:hover img {
+    content: url('./images/job1/horiseon.png');
+}
+#second-job-image:hover img {
+    content: url("./images/job2/Screenshot\ 2023-12-19\ at\ 11.22.34\ PM\ \(2\).png");
+}
+#third-job-image:hover img {
+    content: url('./images/job3/job3.png');
+}
+#forth-job-image:hover img {
+    content: url(./images/PlaceHolder.png);
+}
+
 
 @media screen and (min-width: 500px){
     .navigation {
@@ -314,6 +343,9 @@ footer div:hover span{
         justify-content: flex-end;
         align-items: center;
         margin-top: 0;
+    }
+    #work-Tittle {
+        font-size: 25px;
     }
 }
 
@@ -353,4 +385,5 @@ footer div:hover span{
         top: 15VH;
         left: 310px;
     }
+   
 }
