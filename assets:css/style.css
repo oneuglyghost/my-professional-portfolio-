@@ -21,15 +21,15 @@ body {
 
 header {
     color: var(--green);
-    padding: 10px;
+    padding: 30px;
     position: relative;
-    padding-left: 30px;
+    padding-left:50px;
 }
 
 
 h1 {
     font-size: 30px;
-    padding: 5px;
+    padding: 10px;
     
 }
 
@@ -46,7 +46,7 @@ h1 {
     background-color:var(--border-color);
     height: 2px;
     z-index: -3;
-    right: 30px;
+    right: 40px;
     left: 30px;
 }
 
@@ -59,7 +59,7 @@ h1 {
 }
 .profile-square {
     margin: 10px;
-    left: 20px;
+    left: 30px;
     width: 30%;
     min-width: 150px;
     max-width: 250px;
@@ -75,17 +75,18 @@ h1 {
     justify-content: center;
     margin-top: -50px;
     z-index: 2;
-    margin-left: 198px;
+    margin-left: 30px;
     
 }
 
 .navigation ul {
     list-style-type: none;
-    
+    margin-top: 50px;
+    margin-right: 50px;
 }
 
 .navigation li {
-    margin-right: 15px;
+    margin-right: 30px;
     padding-top: 30px;
     min-width: 101px;    
     
@@ -135,18 +136,20 @@ p {
     padding-top: 30px;
     color: var(--green);
     text-align: left;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
     line-height: 2;
     margin-bottom: 0;
     
 }
 
 
-/*---highlighted words---*/
-mark{
-    background-color: var(--green);
+/*---underlines words---*/
+
+.underline {
     font-weight: bold;
+    text-decoration: underline;
+    color: #0cfc03;
 }
 
 .typingAnimation::after{
@@ -175,7 +178,7 @@ mark{
 
 /* past work example section */
 .work-container {
-    margin-left: 30px;
+    margin-left: 50px;
     display: flex;
     flex-direction: column;
     flex: 1;
@@ -204,7 +207,7 @@ mark{
 #text-box-flex{
     display: flex;
     flex-direction: row;
-    margin-right: 30px;
+    margin-right: 50px;
 
 }
 .description-Box {
@@ -276,9 +279,9 @@ footer {
    justify-content: flex-end;
 }
 footer div {
-    margin-right: 30px;
+    margin-right: 50px;
     padding-top: 10px;
-    margin-bottom: 30px;
+    margin-bottom: 100px;
 }
 i {
     color: var(--border-color);
@@ -314,6 +317,131 @@ footer div:hover span{
     overflow: hidden;
     border-right: 2px solid; /* Add a cursor effect */
 }
+/*--screen overlay-*/
+#crt:before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(18, 16, 16, 0) 50%,
+        rgba(0, 0, 0, 0.25) 50%
+    );
+    background-size: 100% 5px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.screen {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    border-image-slice: 30 fill;
+    border-image-outset: 0;
+    overflow: hidden;
+    z-index: -3;
+  }
+@keyframes textShadow {
+    0% {
+      text-shadow: 0.4389924193300864px 0 1px rgba(0,30,255,0.5), -0.4389924193300864px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+    }
+    5% {
+      text-shadow: 2.7928974010788217px 0 1px rgba(0,30,255,0.5), -2.7928974010788217px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+    }
+    10% {
+      text-shadow: 0.02956275843481219px 0 1px rgba(0,30,255,0.5), -0.02956275843481219px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+    }
+    15% {
+      text-shadow: 0.40218538552878136px 0 1px rgba(0,30,255,0.5), -0.40218538552878136px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+    }
+    20% {
+      text-shadow: 3.4794037899852017px 0 1px rgba(0,30,255,0.5), -3.4794037899852017px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+    }
+    25% {
+      text-shadow: 1.6125630401149584px 0 1px rgba(0,30,255,0.5), -1.6125630401149584px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+    }
+    30% {
+      text-shadow: 0.7015590085143956px 0 1px rgba(0,30,255,0.5), -0.7015590085143956px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+    }
+    35% {
+      text-shadow: 3.896914047650351px 0 1px rgba(0,30,255,0.5), -3.896914047650351px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+    }
+    40% {
+      text-shadow: 3.870905614848819px 0 1px rgba(0,30,255,0.5), -3.870905614848819px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+    }
+    45% {
+      text-shadow: 2.231056963361899px 0 1px rgba(0,30,255,0.5), -2.231056963361899px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+    }
+    50% {
+      text-shadow: 0.08084290417898504px 0 1px rgba(0,30,255,0.5), -0.08084290417898504px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+    }
+    55% {
+      text-shadow: 2.3758461067427543px 0 1px rgba(0,30,255,0.5), -2.3758461067427543px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+    }
+    60% {
+      text-shadow: 2.202193051050636px 0 1px rgba(0,30,255,0.5), -2.202193051050636px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+    }
+    65% {
+      text-shadow: 2.8638780614874975px 0 1px rgba(0,30,255,0.5), -2.8638780614874975px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+    }
+    70% {
+      text-shadow: 0.48874025155497314px 0 1px rgba(0,30,255,0.5), -0.48874025155497314px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+    }
+    75% {
+      text-shadow: 1.8948491305757957px 0 1px rgba(0,30,255,0.5), -1.8948491305757957px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+    }
+    80% {
+      text-shadow: 0.0833037308038857px 0 1px rgba(0,30,255,0.5), -0.0833037308038857px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+    }
+    85% {
+      text-shadow: 0.09769827255241735px 0 1px rgba(0,30,255,0.5), -0.09769827255241735px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+    }
+    90% {
+      text-shadow: 3.443339761481782px 0 1px rgba(0,30,255,0.5), -3.443339761481782px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+    }
+    95% {
+      text-shadow: 2.1841838852799786px 0 1px rgba(0,30,255,0.5), -2.1841838852799786px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+    }
+    100% {
+      text-shadow: 2.6208764473832513px 0 1px rgba(0,30,255,0.5), -2.6208764473832513px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+    }
+  }
+  /*----adds glitch effect to text items--*/
+  .crt {
+    animation: textShadow 1.6s infinite;
+  }
+  /*----adds scann effect to text items--*/
+  .scanline {
+    width: 100%;
+    height: 100px;
+    z-index: 8;
+    background: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(255, 255, 255, 0.2) 10%,
+        rgba(0, 0, 0, 0.1) 100%
+    );
+    opacity: 0.1;
+    position: absolute;
+    bottom: 100%;
+    animation: scanline 10s linear infinite;
+}
+@keyframes scanline {
+    0% {
+        bottom: 100%;
+    }
+    80% {
+        bottom: 100%;
+    }
+    100% {
+        bottom: 0%;
+    }
+}
+
 
 /*-- changing the image on hover --*/
 #profile-image-change:hover img {
@@ -329,7 +457,7 @@ footer div:hover span{
     content: url('./images/job3/job3.png');
 }
 #forth-job-image:hover img {
-    content: url(./images/PlaceHolder.png);
+    content: url('./images/job4/weather.png');
 }
 
 
