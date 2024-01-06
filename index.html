@@ -8,16 +8,14 @@
     <link rel="stylesheet" href="./assets:css/reset.css">
     <link rel="stylesheet" href="./assets:css/style.css">
     <script src="https://kit.fontawesome.com/7606e62159.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
 <body>
     <div id="monitor">
-        <!-- the rounded edge near the glass -->
-        <div id="bezel">
             <!-- the overlay and horizontal pattern -->
-            <div id="crt" class="off" onClick="handleClick(event)"> 
+            <div id="crt"> 
                 <!-- slowly moving scanline -->
                 <div class="scanline"></div>
-                <!-- the input and output -->
                 
             </div>
         </div>
@@ -32,9 +30,18 @@
 
         <section>
                 <div class="profile-square" id ="profile-image-change" >
-                    <img src="./assets:css/images/profile/profile-mochi.png" alt="Profile picture for Bernardo A.">
+                    <img src="./assets:css/images/profile/profile-terminal-look.png" alt="Profile picture for Bernardo A.">
                 </div>
             <nav class="navigation crt">
+                <div class="directoryContainer">
+                    <div id ="nav-folder" >
+                        <i class="fa-regular fa-folder-open"> Directory...</i>
+                    </div>
+                        <img id="nav-box" src="./assets:css/images/outline.png" alt="">
+                    <div id= "close-x">
+                        <i  class="fa-solid fa-xmark" onclick = "closeBox()"></i>
+                    </div>
+                </div>
                 <ul>
                     <li>
                         <a href="#about-me" class="hover-select">0.1 About-Me</a>

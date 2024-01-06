@@ -69,41 +69,80 @@ h1 {
 
 
 /* the navigation menu */
-.navigation {
+#nav-folder{
     position: absolute;
-    top: 17vh;
-    justify-content: center;
-    margin-top: -50px;
-    z-index: 2;
-    margin-left: 30px;
-    
+    top: 160px;
+    left: 53vw;
+    cursor: pointer;
 }
 
+#nav-box {
+    display: none;
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 200px;
+    left: 53vw;
+    transition: width 0.5s, height 0.5s;
+    z-index: -1;
+}
+@keyframes expandAnimation {
+    to{
+        width: 36vw;
+        height: 164px;
+    }
+}
+
+#nav-box.expanding {
+    animation: expandAnimation 0.2s forwards;
+}
+
+
+#close-x {
+    position: absolute;
+    top: 213px;
+    left: 81vw;
+    font-size: 20px;
+    text-align: left;
+    display: none;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+@keyframes x-animation {
+    to{
+        display: block;
+        opacity: 1;
+    }
+}
+#close-x.show-x{
+    animation: x-animation 0.5s forwards;
+}
 .navigation ul {
-    list-style-type: none;
-    margin-top: 50px;
-    margin-right: 50px;
+    margin-left:56vw;
+    margin-top: -100px;
+    margin-bottom: 30px;
+    z-index: 1;
+    display: none;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+@keyframes nav-animation {
+    to{
+        display: block;
+        opacity: 1;
+    }
+}
+.navigation ul.nav-animation{
+    animation: x-animation 0.5s forwards;
 }
 
-.navigation li {
-    margin-right: 30px;
-    padding-top: 30px;
-    min-width: 101px;    
-    
+.navigation li{
+    margin-bottom: 15px;
 }
-
-
 .navigation a {
+    
     text-decoration: none;
     color: var(--green);
-    font-size: 16px;
-    padding: 5px;
-    width: 140px;
-    transition: color 0.3s ease;
-    position: relative;
-    display: flex;
-    justify-content: left;   
-    border: 3px solid var(--border-color);
     
 }
 
@@ -118,6 +157,13 @@ h1 {
     color:var(--green-selected); /* Change the color when hovering */
     animation: blink 1s infinite;
 }
+#nav-folder:hover::before {
+    content: ">";
+    padding-right: 2px;
+    color:var(--green-selected); /* Change the color when hovering */
+    animation: blink 1s infinite;
+}
+
 
 @keyframes blink {
     0% { opacity: 1; }
@@ -318,10 +364,11 @@ footer div:hover span{
     border-right: 2px solid; /* Add a cursor effect */
 }
 /*--screen overlay-*/
+
 #crt:before {
     content: " ";
     display: block;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     bottom: 0;
@@ -335,16 +382,6 @@ footer div:hover span{
     z-index: 2;
     pointer-events: none;
 }
-
-.screen {
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    border-image-slice: 30 fill;
-    border-image-outset: 0;
-    overflow: hidden;
-    z-index: -3;
-  }
 @keyframes textShadow {
     0% {
       text-shadow: 0.4389924193300864px 0 1px rgba(0,30,255,0.5), -0.4389924193300864px 0 1px rgba(255,0,80,0.3), 0 0 3px;
@@ -417,7 +454,7 @@ footer div:hover span{
   /*----adds scann effect to text items--*/
   .scanline {
     width: 100%;
-    height: 100px;
+    height: 100vh;
     z-index: 8;
     background: linear-gradient(
         0deg,
@@ -426,7 +463,7 @@ footer div:hover span{
         rgba(0, 0, 0, 0.1) 100%
     );
     opacity: 0.1;
-    position: absolute;
+    position: fixed;
     bottom: 100%;
     animation: scanline 10s linear infinite;
 }
@@ -445,7 +482,7 @@ footer div:hover span{
 
 /*-- changing the image on hover --*/
 #profile-image-change:hover img {
-    content: url('./images/profile/profile.jpeg');
+    content: url('./images/profile/nobackground.png');
 }
 #first-job-image:hover img {
     content: url('./images/job1/horiseon.png');
@@ -461,49 +498,46 @@ footer div:hover span{
 }
 
 
-@media screen and (min-width: 500px){
-    .navigation {
-        position: absolute;
-        top: 100px; 
-        right: 15px;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        margin-top: 0;
-    }
-    #work-Tittle {
-        font-size: 25px;
-    }
-}
 
-@media screen and (min-width: 830px) {
+@media screen and (min-width: 900px) {
     /*--to resize nav to adjust for difrent screens--*/
     .navigation {
         position: absolute;
-        top: 100px; 
-        right: 15px;
         display: flex;
         justify-content: flex-end;
         align-items: center;
-        margin-top: 0;
+        opacity: 1;
     }
-
+    #nav-folder{
+        display: none;
+    }
     .navigation ul {
+        
         display: flex;
-        justify-content: flex-end; 
-        align-items: center; 
+        
         list-style-type: none;
+        
     }
-
+    .directoryContainer{
+        display: none;
+    }
     .navigation li {
         padding-top: 0;
-        width: 136px;
         margin-right: 20px;
     }
 
     .navigation a {
         padding: 5px; 
-        
+        text-decoration: none;
+        color: var(--green);
+        padding: 5px;
+        width: 140px;
+        transition: color 0.3s ease;
+        position: relative;
+        display: block; 
+        z-index: 3;
+        border: 3px solid var(--border-color);
+    
     }
     /*--to resize about-me to adjust for difrent screens--*/
    

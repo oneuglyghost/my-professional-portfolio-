@@ -101,3 +101,18 @@ function animateText(elementId, text) {
 }
 
 
+// nav folder animation
+$(document).ready(function () {
+    $("#nav-folder").on("click", function () {
+        // Toggle visibility and apply appropriate animation class
+        $("#nav-box").toggle().toggleClass("expanding");
+        $("#close-x").toggle().toggleClass("show-x");
+        $(".navigation ul").toggle().toggleClass("nav-animation");
+    });
+});
+
+function closeBox(){
+    $("#nav-box").toggle().toggleClass("expanding");
+    $("#close-x").toggle().toggleClass("show-x");
+    $(".navigation ul").toggle().toggleClass("nav-animation");
+}
