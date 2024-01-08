@@ -116,3 +116,5 @@ function closeBox(){
     $("#close-x").toggle().toggleClass("show-x");
     $(".navigation ul").toggle().toggleClass("nav-animation");
 }
+
+

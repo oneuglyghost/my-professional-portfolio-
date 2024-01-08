@@ -34,25 +34,28 @@
                 </div>
             <nav class="navigation crt">
                 <div class="directoryContainer">
-                    <div id ="nav-folder" >
+                    <div id ="nav-folder" class="hover-select" >
                         <i class="fa-regular fa-folder-open"> Directory...</i>
                     </div>
-                        <img id="nav-box" src="./assets:css/images/outline.png" alt="">
-                    <div id= "close-x">
-                        <i  class="fa-solid fa-xmark" onclick = "closeBox()"></i>
+                    <div id="nav-box">
+                        <div >
+                            <i id= "close-x" class="fa-solid fa-xmark" onclick = "closeBox()"></i>
+                        </div>
+                        <ul>
+                            <li>
+                                <a href="#about-me" class="hover-select">0.1 About-Me</a>
+                            </li>
+                            <li>
+                                <a href="#work" class="hover-select">0.2 Work</a>
+                            </li>
+                            <li>
+                                <a href="#contact" class="hover-select">0.3 Contact-Me</a>
+                            </li>
+                        </ul>
                     </div>
+                    
                 </div>
-                <ul>
-                    <li>
-                        <a href="#about-me" class="hover-select">0.1 About-Me</a>
-                    </li>
-                    <li>
-                        <a href="#work" class="hover-select">0.2 Work</a>
-                    </li>
-                    <li>
-                        <a href="#contact" class="hover-select">0.3 Contact-Me</a>
-                    </li>
-                </ul>
+                
             </nav>
         
         </section>
