@@ -70,10 +70,46 @@ h1 {
 
 /* the navigation menu */
 #nav-folder{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
     position: absolute;
-    top: 160px;
-    left: 53vw;
+    top: 170px;
+    left: 45vw;
     cursor: pointer;
+    gap: 10vw;
+}
+.menu-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+.menu-item {
+    border: 2px solid var(--green-selected);
+    padding: 15px 5px 15px 5px ;
+}
+
+.menuSelect {
+    color: var(--green-selected);
+}
+.menu-item:hover{
+    color: #000000;
+    background-color: var(--green-selected);
+}
+.menu-item:hover i{
+    color: #000000;
+    
+}
+.menu-item:hover::before {
+    content: ">";
+    font-size: 30px;
+    position: absolute;
+    color:var(--green-selected); /* Change the color when hovering */
+    animation: blink 1s infinite;
+    position: absolute;
+    left: -20px;
+    
 }
 
 
@@ -84,7 +120,6 @@ h1 {
     }
 }
 #nav-box{
-    
     text-align: center;
     position: absolute;
     right: 30px;
@@ -96,6 +131,7 @@ h1 {
     display: none;
 }
 
+
 #nav-box.expanding {
     animation: expandAnimation 0.2s forwards;
 }
@@ -104,7 +140,9 @@ h1 {
     margin-left: 45px;
     margin-right: 45px;
 }
-
+#nav-box ul{
+    margin-top: 40px;
+}
 
 #close-x {
     font-size: 20px;
@@ -143,18 +181,26 @@ h1 {
 }
 .navigation a {
     text-decoration: none;
-    color: var(--green);
+    color: var(--green-selected);
 }
-
+.navigation a:hover{
+    color: #000000;
+}
+.navigation li:hover{
+    background-color: var(--green-selected);
+}
+.navigation li:hover a{
+    color: #000000;
+}
 
 .hover-select:hover::before {
     content: ">";
     padding-right: 2px;
     color:var(--green-selected); /* Change the color when hovering */
     animation: blink 1s infinite;
+    background-color: var(--green-selected);
+    color: #000000;
 }
-
-
 
 @keyframes blink {
     0% { opacity: 1; }
@@ -165,7 +211,7 @@ h1 {
 /* About me section */
 h2 {
     color: var(--green);
-    padding-left: 80px;
+    padding-left: 50px;
     position: relative;
 }
 
@@ -184,9 +230,8 @@ p {
 /*---underlines words---*/
 
 .underline {
-    font-weight: bold;
+    
     text-decoration: underline;
-    color: #0cfc03;
 }
 
 .typingAnimation::after{
@@ -321,7 +366,7 @@ footer div {
     margin-bottom: 100px;
 }
 i {
-    color: var(--border-color);
+    color: var(--green-selected);
 }
 /*-----settings for the hover effect on the footer-----*/
 i:hover{
