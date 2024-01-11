@@ -39,7 +39,7 @@ h1 {
 }
 
 /* the decorative lines in my page */
-.h-possition {
+.h-position {
     margin-top: 40px;
     display: flex;
     align-items: center;
@@ -55,12 +55,14 @@ h1 {
     left: 30px;
 }
 
-#profileSecion{
+#profileSection{
     display: flex;
+    flex-wrap: wrap;
     padding-left: 30px;
     padding-right: 30px;
     gap: 30px;
 }
+
 /* this is the square around profile pic */
 .profile-square img {
     width: 100%;
@@ -228,6 +230,7 @@ i {
 }
 
 /* About me section */
+
 h2 {
     color: var(--green);
     padding-left: 50px;
@@ -365,12 +368,8 @@ p {
 }
 
 
-/*----fotter section----*/ 
-.h-possition
-#deco-line-contact { 
-    right: 30px;
-    left: 206px;
-}
+/*----footer section----*/ 
+
 
 footer {
    text-align: right;
@@ -503,7 +502,7 @@ footer div:hover span{
   .crt {
     animation: textShadow 1.6s infinite;
   }
-  /*----adds scann effect to text items--*/
+  /*----adds scan effect to text items--*/
   .scanline {
     width: 100%;
     height: 100vh;
@@ -557,47 +556,45 @@ footer div:hover span{
 
 
 @media screen and (min-width: 747px) {
-    /*--to resize nav to adjust for difrent screens--*/
-    .navigation {
-        position: absolute;
+    /*--to resize nav to adjust for different screens--*/
+
+    #profileSection{
         display: flex;
-        align-items: center;
-        opacity: 1;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .navigation{
+        position: absolute;
+        right: 30px;
+        top: 110px;
     }
     #nav-folder{
-        display: none;
+        flex-direction: row;
+        gap: 30px;
     }
-    .navigation ul {
+    .directoryContainer {
         display: flex;
-        list-style-type: none;
+        flex-direction: row;
     }
-    .directoryContainer{
+    #aboutme-decoline {
         display: none;
+       
     }
-    .navigation li {
-        padding-top: 0;
-        margin-right: 20px;
-    }
-
-    .navigation a {
-        padding: 5px; 
-        text-decoration: none;
-        color: var(--green);
-        padding: 5px;
-        width: 140px;
-        transition: color 0.3s ease;
-        position: relative;
-        display: block; 
-        z-index: 3;
-        border: 3px solid var(--border-color);
     
+    .about-me {
+        width: 59%;
+        display: flex;
+        flex-direction: column;
     }
-    /*--to resize about-me to adjust for difrent screens--*/
-   
-    .about-me{
-        position: absolute;
-        top: 15VH;
-        left: 310px;
+    #about-me-paragraph {
+        margin-top: 80px;
+    }
+    #aboutMeText{
+        top: 80px;  
+    }
+    .profile-square{
+        margin-top: 115px;
     }
    
 }
