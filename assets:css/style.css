@@ -23,7 +23,7 @@ header {
     color: var(--green);
     padding: 30px;
     position: relative;
-    padding-left:50px;
+    padding-left:30px;
 }
 
 
@@ -31,6 +31,11 @@ h1 {
     font-size: 30px;
     padding: 10px;
     
+}
+#profileSecion{
+    display: flex;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 /* the decorative lines in my page */
@@ -46,52 +51,66 @@ h1 {
     background-color:var(--border-color);
     height: 2px;
     z-index: -3;
-    right: 40px;
+    right: 30px;
     left: 30px;
 }
 
-
+#profileSecion{
+    display: flex;
+    padding-left: 30px;
+    padding-right: 30px;
+    gap: 30px;
+}
 /* this is the square around profile pic */
 .profile-square img {
     width: 100%;
-    height: auto;
-    display: block;
+    padding: 5px 5px 0px 5px;
+    height: fit-content;
 }
 .profile-square {
-    margin: 10px;
-    width: 30%;
-    left: 30px;
-    min-width: 150px;
+    
+    min-width: 200px;
     max-width: 250px;
     border: 3px solid var(--border-color);
-    position: relative;
+    background-color: black ;
+    height: fit-content;
 }
 
 
 /* the navigation menu */
+.navigation{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
 #nav-folder{
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    position: absolute;
-    top: 170px;
-    left: 45vw;
+    flex-direction: column;
+    width: fit-content;
     cursor: pointer;
-    gap: 10vw;
+    gap: 5px;
+    flex: 1;
 }
 .menu-item{
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
-}
-.menu-item {
-    border: 2px solid var(--green-selected);
+    width: fit-content;
     padding: 15px 5px 15px 5px ;
+}
+.menu-item span{
+    font-size: 15px;
+    
+   
+}
+
+i {
+    color: var(--green);
 }
 
 .menuSelect {
-    color: var(--green-selected);
+    color: var(--green);
 }
 .menu-item:hover{
     color: #000000;
@@ -230,7 +249,6 @@ p {
 /*---underlines words---*/
 
 .underline {
-    
     text-decoration: underline;
 }
 
@@ -365,12 +383,10 @@ footer div {
     padding-top: 10px;
     margin-bottom: 100px;
 }
-i {
-    color: var(--green-selected);
-}
+
 /*-----settings for the hover effect on the footer-----*/
 i:hover{
-    color:var(--green);
+    color:var(--green-selected);
 }
 .iconHover:hover::before{
     content: ">";
@@ -540,12 +556,11 @@ footer div:hover span{
 
 
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 747px) {
     /*--to resize nav to adjust for difrent screens--*/
     .navigation {
         position: absolute;
         display: flex;
-        justify-content: flex-end;
         align-items: center;
         opacity: 1;
     }
@@ -553,11 +568,8 @@ footer div:hover span{
         display: none;
     }
     .navigation ul {
-        
         display: flex;
-        
         list-style-type: none;
-        
     }
     .directoryContainer{
         display: none;
