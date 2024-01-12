@@ -35,28 +35,30 @@
             <nav class="navigation crt">
                 <div class="directoryContainer">
                     <div id ="nav-folder" class="menuSelect" >
-                        <div class="menu-item">
-                            <i class="fa-regular fa-folder-open "></i>
+                        <div class="menu-item" onclick="updateMenuTitle(this)">
+                            <i class="fa-regular fa-folder-open " ></i>
                             <span> Directory</span>
                         </div>
-                        <div class="menu-item">
-                            <i class="fa-regular fa-folder-open "></i>
-                            <span> Directory</span>
+                        <div class="menu-item" onclick="updateMenuTitle(this)">
+                            <i class="fa-regular fa-folder-open" ></i>
+                            <span> das</span>
                         </div>
-                        <div class="menu-item">
+                        <div class="menu-item" onclick="updateMenuTitle(this)">
                             <i class="fa-regular fa-folder-open "></i>
-                            <span> Directory</span>
+                            <span> view</span>
                         </div>
-                        <div class="menu-item">
+                        <div class="menu-item" onclick="updateMenuTitle(this)">
                             <i class="fa-solid fa-sun"></i>
-                            <span> Directory</span>
+                            <span> night</span>
                         </div>
                     </div>
                     <div id="nav-box">
-                        <div >
+                        <div id="menuWindowHead" >
+                            <h2 id="menuTitle"></h2>
                             <i id= "close-x" class="fa-solid fa-xmark" onclick = "closeBox()"></i>
                         </div>
-                        <ul>
+                        <h2 id="slashDeco">/////////////////////////////////</h2>
+                        <ul class="nav-animation">
                             <li>
                                 <a href="#about-me" class="hover-select">0.1 About-Me</a>
                             </li>

@@ -104,17 +104,24 @@ function animateText(elementId, text) {
 // nav folder animation
 $(document).ready(function () {
     $("#nav-folder").on("click", function () {
-        // Toggle visibility and apply appropriate animation class
-        $("#nav-box").toggle().toggleClass("expanding");
-        $("#close-x").toggle().toggleClass("show-x");
-        $(".navigation ul").toggle().toggleClass("nav-animation");
+        $("#nav-box").toggleClass("expanding");
+        $("#nav-box").css("left", "50%");
+        $("#close-x").toggle();
+        $(".navigation ul").toggleClass("nav-animation");
     });
 });
 
-function closeBox(){
-    $("#nav-box").toggle().toggleClass("expanding");
-    $("#close-x").toggle().toggleClass("show-x");
-    $(".navigation ul").toggle().toggleClass("nav-animation");
+function closeBox() {
+    $("#nav-box").css("left", "-100%");
+    $("#close-x").toggle();
+    $(".navigation ul").toggleClass("nav-animation");
 }
 
+//show the name of the menu i clicked on in the new menu window
+function updateMenuTitle(clickedElement){
+    //get text inside span
+    var menuText= clickedElement.querySelector("span").textContent;
+
+    document.getElementById("menuTitle").textContent= menuText;
+}
 
