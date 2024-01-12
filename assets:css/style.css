@@ -16,7 +16,7 @@ body {
     padding: 0;
     font-family: Glass_TTY;
     background: radial-gradient(circle, #12221a, #000000);
-    line-height: 2;
+    
 }
 
 
@@ -33,11 +33,7 @@ h1 {
     padding: 10px;
     
 }
-#profileSecion{
-    display: flex;
-    padding-left: 30px;
-    padding-right: 30px;
-}
+
 
 /* the decorative lines in my page */
 .h-position {
@@ -59,24 +55,22 @@ h1 {
 #profileSection{
     display: flex;
     flex-wrap: wrap;
-    
-    
     gap: 30px;
 }
 
 /* this is the square around profile pic */
 .profile-square img {
     width: 100%;
-    padding: 5px 5px 0px 5px;
-    height: fit-content;
+    min-width: 150px;
+    max-width: 200px;
+    border: 3px solid var(--border-color);
     height: 100%;
+    
 }
 .profile-square {
     width: 55vw;
     min-width: 150px;
     max-width: 250px;
-    border: 3px solid var(--border-color);
-    background-color: black ;
     height: 100%;
     margin-left: 30px;
 }
@@ -284,21 +278,20 @@ p {
 
 /* past work example section */
 .work-container {
-    
     display: flex;
     flex-direction: column;
     flex: 1;
 }
 
 .work-border { 
-    margin-top: 20px;
-    border: 3px solid var(--border-color); 
+    margin-top: 20px; 
     min-width: 100px;
     
 }
 
 .work-border img {
     width: 100%;
+    border: 3px solid var(--border-color);
 }
 .tint::before{
     content: "";
@@ -314,7 +307,7 @@ p {
     display: flex;
     flex-direction: row;
     margin-right: 30px;
-
+    margin-left: 30px;
 }
 .description-Box {
     flex: 1;
@@ -605,8 +598,8 @@ footer div:hover span{
     
     .profile-square{
         margin-top: 90px;
-        max-width: 200px;
-        margin-left: 40px;
+        max-width: 250px;
+        margin-left: 30px;
     }
    
 }
