@@ -32,9 +32,9 @@
                 <div class="profile-square" id ="profile-image-change" >
                     <img src="./assets:css/images/profile/profile-terminal-look.png" alt="Profile picture for Bernardo A.">
                 </div>
-            <nav class="navigation crt">
+            <nav class="navigation ">
                 <div class="directoryContainer">
-                    <div id ="nav-folder" class="menuSelect" >
+                    <div id ="nav-folder" class="menuSelect crt" >
                         <div class="menu-item" onclick="updateMenuTitle(this)">
                             <i class="fa-regular fa-folder-open " ></i>
                             <span> Directory</span>
@@ -44,21 +44,21 @@
                             <span> das</span>
                         </div>
                         <div class="menu-item" onclick="updateMenuTitle(this)">
-                            <i class="fa-regular fa-folder-open "></i>
-                            <span> view</span>
+                            <i class="fa-solid fa-file"></i>
+                            <span> Resume</span>
                         </div>
                         <div class="menu-item" onclick="updateMenuTitle(this)">
                             <i class="fa-solid fa-sun"></i>
-                            <span> night</span>
+                            <span>Day Mode</span>
                         </div>
                     </div>
                     <div id="nav-box">
                         <div id="menuWindowHead" >
-                            <h2 id="menuTitle"></h2>
-                            <i id= "close-x" class="fa-solid fa-xmark" onclick = "closeBox()"></i>
+                            <h2 id="menuTitle" class="crt"></h2>
+                            <i id= "close-x" class="fa-solid fa-xmark crt" onclick = "closeBox()"></i>
                         </div>
                         <h2 id="slashDeco">/////////////////////////////////</h2>
-                        <ul class="nav-animation">
+                        <ul class="crt">
                             <li>
                                 <a href="#about-me" class="hover-select">0.1 About-Me</a>
                             </li>
@@ -78,7 +78,7 @@
         
         
         
-            <section class="about-me">
+            <section id ="about-me" class="about-me">
                 <article>
                     <div class="h-position">
                         <h2 id="aboutMeText" class="crt" >0.1 About-Me</h2>

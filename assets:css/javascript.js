@@ -104,17 +104,15 @@ function animateText(elementId, text) {
 // nav folder animation
 $(document).ready(function () {
     $("#nav-folder").on("click", function () {
-        $("#nav-box").toggleClass("expanding");
+        
         $("#nav-box").css("left", "50%");
-        $("#close-x").toggle();
-        $(".navigation ul").toggleClass("nav-animation");
+        
     });
 });
 
 function closeBox() {
     $("#nav-box").css("left", "-100%");
-    $("#close-x").toggle();
-    $(".navigation ul").toggleClass("nav-animation");
+    
 }
 
 //show the name of the menu i clicked on in the new menu window
