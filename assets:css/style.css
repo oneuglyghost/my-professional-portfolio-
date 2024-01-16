@@ -7,15 +7,15 @@
     --green: #08a702;
     --green-selected: #0cfc03;
     --background:#254434;
-    --Terminal-background:  rgb(11, 169, 5);
     --white: #fff;
+    --myRadialGradient: radial-gradient(circle, #12221a, #000000);
 }
 
 
 body {
     padding: 0;
     font-family: Glass_TTY;
-    background: radial-gradient(circle, #12221a, #000000);
+    background: var(--myRadialGradient);
     border: 6px solid rgb(49, 48, 48);
     border-radius: 10px;
     box-shadow: inset 0 0 10px 5px var(--background);
@@ -100,7 +100,7 @@ h1 {
     position: relative;
     width: fit-content;
     padding: 15px 5px 15px 5px ;
-    width: 80px;
+    width: 90px;
 }
 .menu-item span{
     font-size: 15px;

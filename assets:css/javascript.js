@@ -1,5 +1,5 @@
 let clickElementId;
-
+const dayNightModeElement= document.getElementById("dayNightMode");
 
 const Work = {
     firstJob: "--Horiseon Website--",
@@ -103,7 +103,7 @@ function animateText(elementId, text) {
 
 // nav folder animation
 $(document).ready(function () {
-    $("#nav-folder").on("click", function () {
+    $("#nav-folder").on("click", ":not(.last-element)", function () {
         
         $("#nav-box").css("left", "50%");
         
@@ -111,7 +111,7 @@ $(document).ready(function () {
 });
 
 function closeBox() {
-    $("#nav-box").css("left", "-100%");
+    $("#nav-box").css("left", "-50%");
     
 }
 
@@ -123,3 +123,60 @@ function updateMenuTitle(clickedElement){
     document.getElementById("menuTitle").textContent= menuText;
 }
 
+// adding a day night mode 
+function changeToDayMode() {
+    // Change CSS variables
+    document.documentElement.style.setProperty('--border-color', '#056502');
+    document.documentElement.style.setProperty('--green', '#08a702');
+    document.documentElement.style.setProperty('--green-selected', '#0cfc03');
+    document.documentElement.style.setProperty('--background', '#254434');
+    document.documentElement.style.setProperty('--white', '#fff');
+    document.documentElement.style.setProperty("--myRadialGradient","radial-gradient(circle, #12221a, #000000")
+    
+    //remove old day class
+    dayNightModeElement.classList.remove("fa-solid", "fa-sun");
+
+    //add new night class
+    dayNightModeElement.classList.add("fa-solid", "fa-moon")
+
+}
+
+function changeToNightMode() {
+    // Change CSS variables
+    document.documentElement.style.setProperty('--border-color', '#8c521b');
+    document.documentElement.style.setProperty('--green', '#f18d2d');
+    document.documentElement.style.setProperty('--green-selected', '#ffae00');
+    document.documentElement.style.setProperty('--background', '#543110');
+    document.documentElement.style.setProperty('--white', '#000000');
+    document.documentElement.style.setProperty("--myRadialGradient","radial-gradient(circle, #432e01, #000000")
+
+     //remove old day class
+   dayNightModeElement.classList.remove("fa-solid", "fa-moon");
+
+   //add new night class
+   dayNightModeElement.classList.add("fa-solid", "fa-sun")
+    
+    
+}
+function dayNightText() {
+    var dayNightText = document.getElementById("lightDarkText");
+    
+    if (dayNightText.innerHTML === "Dark Mode") {
+        dayNightText.innerHTML = "Light Mode";
+    } else {
+        dayNightText.innerHTML = "Dark Mode";
+    }
+    // Add additional code here for toggling other aspects of day/night mode
+}
+
+function toggleDayNight() {
+    if (dayNightModeElement.classList.contains("fa-solid") && dayNightModeElement.classList.contains("fa-moon")){
+        changeToNightMode();
+        dayNightText()
+        console.log("true")
+    } else {
+        changeToDayMode();
+        dayNightText()
+        console.log("false")
+    }  
+};
