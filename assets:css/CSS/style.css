@@ -42,10 +42,31 @@ h1 {
 .h-position {
     margin-top: 40px;
     display: flex;
+    display: inline;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+}
+.h-position h2 {
+    padding-left: 0px;
+}
+
+.h2Positions {
+    margin-top: 40px;
+    display: flex;
     align-items: center;
 }
 
 .deco-line {
+    position: absolute;
+    margin-top: 0px;
+    background-color:var(--border-color);
+    height: 2px;
+    z-index: -3;
+    right: 30px;
+    left: 30px;
+}
+.deco-lineNotHead{
     position: absolute;
     margin-top: 25px;
     background-color:var(--border-color);
@@ -220,7 +241,7 @@ i {
 }
 .navigation a {
     text-decoration: none;
-    color: var(--green-selected);
+    color: var(--green);
 }
 .navigation a:hover{
     color: #000000;
@@ -375,13 +396,14 @@ p {
     margin-bottom: 30px;
 }
 #work-link:hover{
-    background: #254434;
+    background: var(--green-selected);
     border: 3px solid var(--border-color);
-    color: var(--green-selected);
+    color: black;
 }
 #work-link:hover::before{
     content: ">";
     animation: blink 1s infinite;
+    color: black;
 }
 
 
@@ -550,23 +572,23 @@ footer div:hover span{
 
 /*-- changing the image on hover --*/
 #profile-image-change:hover img {
-    content: url("./images/profile/nobackground.png");
+    content: url("/assets:css/images/profile/nobackground.png");
     transition: ease-in-out;
 }
 #first-job-image:hover img {
-    content: url('./images/job1/job1-clear.png');
+    content: url('/assets:css/images/job1/job1-clear.png');
     transition: ease-in-out;
 }
 #second-job-image:hover img {
-    content: url("./images/job2/job2-clear.png");
+    content: url("/assets:css/images/job2/job2-clear.png");
     transition: ease-in-out;
 }
 #third-job-image:hover img {
-    content: url('./images/job3/job3-clear.png');
+    content: url('/assets:css/images/job3/job3-clear.png');
     transition: ease-in-out;
 }
 #forth-job-image:hover img {
-    content: url('./images/job4/job4-clear.png');
+    content: url('/assets:css/images/job4/job4-clear.png');
     transition: ease-in-out;
 }
 
@@ -574,7 +596,11 @@ footer div:hover span{
 
 @media screen and (min-width: 571px) {
     /*--to resize nav to adjust for different screens--*/
-
+    
+    .h-position {
+        align-items: center;
+        display: flex;
+    }
     #profileSection{
         display: flex;
         flex-direction: row;
@@ -582,10 +608,13 @@ footer div:hover span{
         gap: 20px;
         padding-right: 30px;
     }
+    .deco-line {
+        margin-top: 25px;
+    }
     .navigation{
         position: absolute;
         right: 30px;
-        top: 110px;
+        top: 118px;
     }
     #nav-folder{
         flex-direction: row;

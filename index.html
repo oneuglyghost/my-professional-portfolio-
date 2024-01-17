@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./assets:css/reset.css">
-    <link rel="stylesheet" href="./assets:css/style.css">
+    <link rel="stylesheet" href="./assets:css/CSS/reset.css">
+    <link rel="stylesheet" href="./assets:css/CSS/style.css">
     <script src="https://kit.fontawesome.com/7606e62159.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
@@ -23,7 +23,8 @@
    <div>
         <header>
             <div class="h-position">
-                <h1 class="crt">Bernardo A.</h1> 
+                <h1 class="crt">Bernardo A.</h1>
+                <h2 id="date-display"></h2> 
                 <div class="deco-line"></div>
             </div>
         </header>
@@ -39,13 +40,13 @@
                             <i class="fa-regular fa-folder-open " ></i>
                             <span> Directory</span>
                         </div>
-                        <div class="menu-item" onclick="updateMenuTitle(this)">
-                            <i class="fa-regular fa-folder-open" ></i>
-                            <span> das</span>
-                        </div>
+                        <a href="./assets:css/Resume/Bernardo Alonso-Resume.docx"class="last-element menu-item " >
+                            <i class="fa-solid fa-file last-element" ></i>
+                            <span>Resume</span>
+                        </a>
                         <div class="menu-item"onclick="updateMenuTitle(this)" >
-                            <i class="fa-solid fa-file"></i>
-                            <span> Resume</span>
+                            <i class="fa-regular fa-folder-open"></i>
+                            <span>Resume</span>
                         </div>
                         <div class="last-element menu-item" onclick="toggleDayNight()">
                             <i id="dayNightMode"class="last-element fa-solid fa-moon"></i>
@@ -80,9 +81,9 @@
         
             <section id ="about-me" class="about-me">
                 <article>
-                    <div class="h-position">
+                    <div class="h2Positions">
                         <h2 id="aboutMeText" class="crt" >0.1 About-Me</h2>
-                        <div id="aboutme-decoline" class="deco-line"></div>
+                        <div id="aboutme-decoline" class="deco-lineNotHead"></div>
                         
                     </div>
                     <div>
@@ -94,9 +95,9 @@
         </section>    
         <div>
             <section>
-                <div class="h-position">
+                <div class="h2Positions">
                     <h2 id="work" class="crt"> 0.2 Work</h2>
-                    <div class="deco-line"></div>
+                    <div class="deco-lineNotHead"></div>
                 </div>
                 <div id="text-box-flex">
                     <div class="work-container">
@@ -136,9 +137,9 @@
 
 
         <section>
-            <div class="h-position">
+            <div class="h2Positions">
                 <h2 id="contact" class="crt">0.3 Contact-Me</h2>
-                <div class="deco-line"></div>
+                <div class="deco-lineNotHead"></div>
                 
             </div>
             <footer>
@@ -170,7 +171,7 @@
 
         </section>
     </div>    
-<script src="./assets:css/javascript.js"></script>
+<script src="./assets:css/JavaScript/javascript.js"></script>
 </body>
 </html>
 <!-- credit: http://aleclownes.com/2017/02/01/crt-display.html -->

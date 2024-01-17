@@ -31,7 +31,21 @@ const workLinks = {
     thirdJob: "https://oneuglyghost.github.io/Schedule-application/",
     forthJob:"https://oneuglyghost.github.io/Weather-Updates/",
 };
+//display date at header
+document.addEventListener("DOMContentLoaded", function(){
+    function updateDate(){
+        var currentDateTime = new Date();
+        var formattedDateTime = currentDateTime.toLocaleString();
 
+        //add date to element
+        document.getElementById("date-display").innerHTML += " - " + formattedDateTime + " - ";
+    
+    }
+   // call the function when page loads
+   updateDate();
+    
+
+})
 // gets the id from element that i click on 
 document.addEventListener('click', function (event) {
     // Log the ID of the element being clicked 
