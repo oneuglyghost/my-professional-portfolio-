@@ -572,23 +572,23 @@ footer div:hover span{
 
 /*-- changing the image on hover --*/
 #profile-image-change:hover img {
-    content: url("/assets:css/images/profile/nobackground.png");
+    content: url(/assets:css/images/profile/nobackground.png);
     transition: ease-in-out;
 }
 #first-job-image:hover img {
-    content: url('/assets:css/images/job1/job1-clear.png');
+    content: url(/assets:css/images/job1/job1-clear.png);
     transition: ease-in-out;
 }
 #second-job-image:hover img {
-    content: url("/assets:css/images/job2/job2-clear.png");
+    content: url(/assets:css/images/job2/job2-clear.png);
     transition: ease-in-out;
 }
 #third-job-image:hover img {
-    content: url('/assets:css/images/job3/job3-clear.png');
+    content: url(/assets:css/images/job3/job3-clear.png);
     transition: ease-in-out;
 }
 #forth-job-image:hover img {
-    content: url('/assets:css/images/job4/job4-clear.png');
+    content: url(/assets:css/images/job4/job4-clear.png);
     transition: ease-in-out;
 }
 

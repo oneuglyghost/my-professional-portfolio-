@@ -38,40 +38,48 @@ document.addEventListener("DOMContentLoaded", function(){
         var formattedDateTime = currentDateTime.toLocaleString();
 
         //add date to element
-        document.getElementById("date-display").innerHTML += " - " + formattedDateTime + " - ";
+        document.getElementById("date-display").innerHTML = " - " + formattedDateTime + " - ";
     
     }
    // call the function when page loads
    updateDate();
     
-
+    // Update every second 
+    setInterval(updateDate, 1000);
 })
+
+
+let stopAnimation;
+
 // gets the id from element that i click on 
 document.addEventListener('click', function (event) {
     // Log the ID of the element being clicked 
     console.log('clicked element ID:', event.target.id);
     clickElementId = event.target.id;
-    
-    const workLinkElement = document.getElementById('work-link');
-    
-    for (const job in Work) { // loops through work properties
 
+    // Stop the current animation if there is one
+    if (stopAnimation) {
+        stopAnimation();
+    }
+
+    const workLinkElement = document.getElementById('work-link');
+
+    for (const job in Work) { // loops through work properties
         if (job == clickElementId){  // checks if any property in Work matches the clicked id 
             // adds text to the element with that id
             document.getElementById("work-Tittle").innerHTML = Work[job] ;
         
             if (workDescription[job]) {
-                animateText("work-Description", workDescription[job]);
+                stopAnimation = animateText("work-Description", workDescription[job]);
                 document.getElementById("description-tittle").textContent = "Description:"
                 document.getElementById("tools-list").textContent = "Skills Used:"
                 document.getElementById("about-me-paragraph").classList.remove("typingAnimation");
                 document.getElementById("work-Description").classList.add("typingAnimation-Description", "crt");
-                
-                
             } else {
                 console.log("no match");
                 null
             }
+
             // Check if there is an existing "work-tools" list
             let workToolsList = document.getElementById("work-tools");
             if (!workToolsList) {
@@ -81,7 +89,6 @@ document.addEventListener('click', function (event) {
                 // Append the "ul" element to the parent container
                 document.querySelector('div').appendChild(workToolsList);
             }
-            
 
             // Clear the existing tools in the list
             workToolsList.innerHTML = "";
@@ -98,7 +105,6 @@ document.addEventListener('click', function (event) {
             workLinkElement.href = workLinks[job];
             // show the "work-link" button
             document.getElementById("work-link").style.display = "block"
-            
 
             break; // stops the loop if a match is made or when it gets to the end of list
         }
@@ -112,12 +118,24 @@ function animateText(elementId, text) {
     const characters = text.split("");
 
     // Use the array to create a sequence of setTimeout functions to simulate typing
-    characters.forEach((char, index) => {
-        setTimeout(() => {
-            element.textContent += char;
+    let animation = {
+        index: 0,
+        timeoutId: null
+    };
 
-        }, 50 * index); // Adjust the speed of typing (milliseconds)
-    });
+    function doAnimation() {
+        if (animation.index < characters.length) {
+            element.textContent += characters[animation.index++];
+            animation.timeoutId = setTimeout(doAnimation, 50); // Adjust the speed of typing (milliseconds)
+        }
+    }
+
+    doAnimation();
+
+    // Return a function to stop the animation
+    return function() {
+        clearTimeout(animation.timeoutId);
+    };
 }
 
 
