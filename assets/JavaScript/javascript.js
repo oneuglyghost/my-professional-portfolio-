@@ -4,32 +4,39 @@ var imageElement = document.getElementById("profile-image");
 var job1 = document.getElementById("firstJob")
 var job2 = document.getElementById("secondJob")
 var job3 = document.getElementById("thirdJob")
-var job4 = document.getElementById("forthJob")
+var job4 = document.getElementById("fourthJob")
 
+// Store the original image sources
+const originalSources = {
+    firstJob: '/assets/images/job1/job1-clear.png',
+    secondJob: '/assets/images/job2/job2-clear.png',
+    thirdJob: '/assets/images/job3/job3-clear.png',
+    fourthJob: '/assets/images/job4/job4-clear.png'
+};
 
 const Work = {
     firstJob: "--Horiseon Website--",
     secondJob: "--Coding Quiz--",
     thirdJob: "--Work Day Scheduler--",
-    forthJob: "--Weather Forcast--",
+    fourthJob: "--Weather Forcast--",
 };
 const workDescription = {
     firstJob: "This project aims to enhance familiarity with website accessibility standards and provides an opportunity to further hone CSS skills by focusing on the organized structuring of HTML elements with semantic precision.",
     secondJob:"This interactive program is a quiz designed to reinforce proficiency in HTML, CSS, and JavaScript, emphasizing logical reasoning and structural understanding. Upon launching the program, a 'Start Quiz' button initiates a timer set to 75 seconds. For every correct answer, participants earn 5 points, while each incorrect response deducts 5 seconds from the timer. Once all questions are answered or the timer reaches zero, participants are prompted to submit their score and initials. Highscores are stored locally, allowing users to restart the quiz or clear the highscore list at their convenience.",
     thirdJob:"This minimalist Daily Schedule Planner serves as a hands-on exercise in utilizing time.js, dynamically updating HTML, and applying CSS with the support of jQuery. The interface presents the current date prominently and displays a daily schedule from 9 AM to 5 PM. The background color of each time block adapts to the current time—gray for the past, red for the present, and green for the future. Users can click on any time block to input upcoming events, and upon clicking the corresponding save button, the entered text is stored in local storage. This ensures that the schedule remains intact even after refreshing or closing the page. Upon successful saving, a confirmation message is displayed, providing a seamless user experience.",
-    forthJob:"This web application was created as a hands-on exercise in utilizing HTML, CSS, and JavaScript, while also honing skills with the OpenWeatherAPI. The functionality of the app revolves around user searches for city names. When a city name is entered, it undergoes validation through the OpenWeatherAPI. If it's a valid search item, the information is saved to local storage and presented below the search button as a historical search item. Users can click on these past searches to retrieve and display detailed weather information, including the city name, current date, temperature, wind speed, humidity, and a 5-day forecast for the selected city.",
+    fourthJob:"This web application was created as a hands-on exercise in utilizing HTML, CSS, and JavaScript, while also honing skills with the OpenWeatherAPI. The functionality of the app revolves around user searches for city names. When a city name is entered, it undergoes validation through the OpenWeatherAPI. If it's a valid search item, the information is saved to local storage and presented below the search button as a historical search item. Users can click on these past searches to retrieve and display detailed weather information, including the city name, current date, temperature, wind speed, humidity, and a 5-day forecast for the selected city.",
 };
 const workTools = {
     firstJob: ["HTML","CSS"],
     secondJob: ["HTML","CSS","JavaScript"],
     thirdJob: ["HTML","CSS","JavaScript","Time.js","jQuery"],
-    forthJob:["HTML","CSS","JavaScript","Time.js","OpenWeatherApi"],
+    fourthJob:["HTML","CSS","JavaScript","Time.js","OpenWeatherApi"],
 }
 const workLinks = {
     firstJob: "https://oneuglyghost.github.io/Horiseon-Social-Solution-Information-Website/",
     secondJob: "https://oneuglyghost.github.io/module-4-code-quiz/",
     thirdJob: "https://oneuglyghost.github.io/Schedule-application/",
-    forthJob:"https://oneuglyghost.github.io/Weather-Updates/",
+    fourthJob:"https://oneuglyghost.github.io/Weather-Updates/",
 };
 //display date at header
 document.addEventListener("DOMContentLoaded", function(){
@@ -50,6 +57,9 @@ document.addEventListener("DOMContentLoaded", function(){
 
 
 let stopAnimation;
+// Store the ID of the previously clicked element
+let previousClickId = null;
+
 
 // gets the id from element that i click on 
 document.addEventListener('click', function (event) {
@@ -57,6 +67,38 @@ document.addEventListener('click', function (event) {
     console.log('clicked element ID:', event.target.id);
     clickElementId = event.target.id;
 
+    // Reset the images that are not being clicked on
+    if (clickElementId !== 'firstJob') {
+    document.getElementById('firstJob').src = '/assets/images/job1/pixel-job1.png';
+    }
+    if (clickElementId !== 'secondJob') {
+        document.getElementById('secondJob').src = '/assets/images/job2/pixel-job2.png';
+    }
+    if (clickElementId !== 'thirdJob') {
+        document.getElementById('thirdJob').src = '/assets/images/job3/pixel-job3.png';
+    }
+    if (clickElementId !== 'fourthJob') {
+        document.getElementById('fourthJob').src = '/assets/images/job4/pixel-job4.png';
+    }
+
+    // Change the image source based on the clicked element
+    switch (clickElementId) {
+        case 'firstJob':
+            document.getElementById('firstJob').src = '/assets/images/job1/job1-clear.png';
+            break;
+        case 'secondJob':
+            document.getElementById('secondJob').src = '/assets/images/job2/job2-clear.png';
+            break;
+        case 'thirdJob':
+            document.getElementById('thirdJob').src = '/assets/images/job3/job3-clear.png';
+            break;
+        case 'fourthJob':
+            document.getElementById('fourthJob').src = '/assets/images/job4/job4-clear.png';
+            break;
+        default:
+            break;
+    }
+        
     // Stop the current animation if there is one
     if (stopAnimation) {
         stopAnimation();
@@ -102,6 +144,7 @@ document.addEventListener('click', function (event) {
                     workToolsList.appendChild(listItem);
                 });  
             }
+            
             workLinkElement.href = workLinks[job];
             // show the "work-link" button
             document.getElementById("work-link").style.display = "block"
