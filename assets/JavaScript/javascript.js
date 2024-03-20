@@ -215,16 +215,16 @@ function toggleDayNight() {
         //change all images 
 
         //profile img
-        imageElement.src = "./assets:css/images/profile/terminal-effect-lightMode.png";
+        imageElement.src = "./assets/images/profile/terminal-effect-lightMode.png";
         imageElement.alt = "light mode profile pic";
         //jobs img
-        job1.src = "./assets:css/images/job1/job1-LightMode.png";
+        job1.src = "./assets/images/job1/job1-LightMode.png";
         job1.alt = "job1 pic light mode";
-        job2.src = "./assets:css/images/job2/job2-LightMode.png";
+        job2.src = "./assets/images/job2/job2-LightMode.png";
         job2.alt = "job2 pic light mode";
-        job3.src = "./assets:css/images/job3/job3-LightMode.png";
+        job3.src = "./assets/images/job3/job3-LightMode.png";
         job3.alt = "job3 pic light mode";
-        job4.src = "./assets:css/images/job4/job4-LightMode.png";
+        job4.src = "./assets/images/job4/job4-LightMode.png";
         job4.alt = "job4 pic light mode";
     } else {
         changeToDayMode();
@@ -232,16 +232,16 @@ function toggleDayNight() {
         //change all images
 
         //profile img
-        imageElement.src = "./assets:css/images/profile/profile-terminal-look.png";
+        imageElement.src = "./assets/images/profile/profile-terminal-look.png";
         imageElement.alt = "Dark mode profile pic";
         //jobs img
-        job1.src = "././assets:css/images/job1/pixel-job1.png";
+        job1.src = "././assets/images/job1/pixel-job1.png";
         job1.alt = "job1 pic";
-        job2.src = "./assets:css/images/job2/pixel-job2.png";
+        job2.src = "./assets/images/job2/pixel-job2.png";
         job2.alt = "job2 pic";
-        job3.src = "./assets:css/images/job3/pixel-job3.png";
+        job3.src = "./assets/images/job3/pixel-job3.png";
         job3.alt = "job3 pic";
-        job4.src = "./assets:css/images/job4/pixel-job4.png";
+        job4.src = "./assets/images/job4/pixel-job4.png";
         job4.alt = "job4 pic";
     }  
 };
