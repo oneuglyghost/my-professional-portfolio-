@@ -83,10 +83,10 @@ document.addEventListener('click', function (event) {
 
     // Map element IDs to image paths
 const imagePaths = {
-    'firstJob': '/assets/images/job1/job1-clear.png',
-    'secondJob': '/assets/images/job2/job2-clear.png',
-    'thirdJob': '/assets/images/job3/job3-clear.png',
-    'fourthJob': '/assets/images/job4/job4-clear.png'
+    'firstJob': './assets/images/job1/job1-clear.png',
+    'secondJob': './assets/images/job2/job2-clear.png',
+    'thirdJob': './assets/images/job3/job3-clear.png',
+    'fourthJob': './assets/images/job4/job4-clear.png'
 };
 
 // Change the image source based on the clicked element
