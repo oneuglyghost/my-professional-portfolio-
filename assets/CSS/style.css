@@ -572,7 +572,7 @@ footer div:hover span{
 
 /*-- changing the image on hover --*/
 #profile-image-change:hover img {
-    content: url(/assets/images/profile/nobackground.png);
+    content: url(../images/profile/nobackground.png);
     transition:ease-in-out;
 }
 
