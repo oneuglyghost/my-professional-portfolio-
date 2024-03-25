@@ -69,31 +69,31 @@ document.addEventListener('click', function (event) {
 
     // Reset the images that are not being clicked on
     if (clickElementId !== 'firstJob') {
-    document.getElementById('firstJob').src = '../images/job1/pixel-job1.png';
+    document.getElementById('firstJob').src = '/assets/images/job1/pixel-job1.png';
     }
     if (clickElementId !== 'secondJob') {
-        document.getElementById('secondJob').src = '../images/job2/pixel-job2.png';
+        document.getElementById('secondJob').src = '/assets/images/job2/pixel-job2.png';
     }
     if (clickElementId !== 'thirdJob') {
-        document.getElementById('thirdJob').src = '../images/job3/pixel-job3.png';
+        document.getElementById('thirdJob').src = '/assets/images/job3/pixel-job3.png';
     }
     if (clickElementId !== 'fourthJob') {
-        document.getElementById('fourthJob').src = '../images/job4/pixel-job4.png';
+        document.getElementById('fourthJob').src = '/assets/images/job4/pixel-job4.png';
     }
 
     // Change the image source based on the clicked element
     switch (clickElementId) {
         case 'firstJob':
-            document.getElementById('firstJob').src = '../images/job1/job1-clear.png';
+            document.getElementById('firstJob').src = '/assets/images/job1/job1-clear.png';
             break;
         case 'secondJob':
-            document.getElementById('secondJob').src = '../images/job2/job2-clear.png';
+            document.getElementById('secondJob').src = '/assets/images/job2/job2-clear.png';
             break;
         case 'thirdJob':
-            document.getElementById('thirdJob').src = '../images/job3/job3-clear.png';
+            document.getElementById('thirdJob').src = '/assets/images/job3/job3-clear.png';
             break;
         case 'fourthJob':
-            document.getElementById('fourthJob').src = '../images/job4/job4-clear.png';
+            document.getElementById('fourthJob').src = '/assets/images/job4/job4-clear.png';
             break;
         default:
             break;
