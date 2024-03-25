@@ -81,23 +81,18 @@ document.addEventListener('click', function (event) {
         document.getElementById('fourthJob').src = './assets/images/job4/pixel-job4.png';
     }
 
-    // Change the image source based on the clicked element
-    switch (clickElementId) {
-        case 'firstJob':
-            document.getElementById('firstJob').src = '/assets/images/job1/job1-clear.png';
-            break;
-        case 'secondJob':
-            document.getElementById('secondJob').src = '/assets/images/job2/job2-clear.png';
-            break;
-        case 'thirdJob':
-            document.getElementById('thirdJob').src = '/assets/images/job3/job3-clear.png';
-            break;
-        case 'fourthJob':
-            document.getElementById('fourthJob').src = '/assets/images/job4/job4-clear.png';
-            break;
-        default:
-            break;
-    }
+    // Map element IDs to image paths
+const imagePaths = {
+    'firstJob': '/assets/images/job1/job1-clear.png',
+    'secondJob': '/assets/images/job2/job2-clear.png',
+    'thirdJob': '/assets/images/job3/job3-clear.png',
+    'fourthJob': '/assets/images/job4/job4-clear.png'
+};
+
+// Change the image source based on the clicked element
+if (imagePaths.hasOwnProperty(clickElementId)) {
+    document.getElementById(clickElementId).src = imagePaths[clickElementId];
+}
         
     // Stop the current animation if there is one
     if (stopAnimation) {
