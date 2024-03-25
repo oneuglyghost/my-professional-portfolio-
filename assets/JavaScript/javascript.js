@@ -91,6 +91,7 @@ const imagePaths = {
 
 // Change the image source based on the clicked element
 if (imagePaths.hasOwnProperty(clickElementId)) {
+    console.log('clicked element ID:', clickElementId); 
     document.getElementById(clickElementId).src = imagePaths[clickElementId];
     console.log('clicked element ID:', clickElementId);  
 }
