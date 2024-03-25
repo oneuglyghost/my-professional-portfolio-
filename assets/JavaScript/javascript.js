@@ -83,17 +83,18 @@ document.addEventListener('click', function (event) {
 
     // Map element IDs to image paths
 const imagePaths = {
-    'firstJob': '../images/job1/job1-clear.png',
-    'secondJob': './assets/images/job2/job2-clear.png',
-    'thirdJob': './images/job3/job3-clear.png',
+    'firstJob': '/assets/images/job1/job1-clear.png',
+    'secondJob': '/assets/images/job2/job2-clear.png',
+    'thirdJob': '/assets/images/job3/job3-clear.png',
     'fourthJob': '/assets/images/job4/job4-clear.png'
 };
 
 // Change the image source based on the clicked element
 if (imagePaths.hasOwnProperty(clickElementId)) {
     document.getElementById(clickElementId).src = imagePaths[clickElementId];
+    console.log('clicked element ID:', clickElementId);  
 }
-        
+  
     // Stop the current animation if there is one
     if (stopAnimation) {
         stopAnimation();
