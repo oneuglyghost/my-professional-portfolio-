@@ -54,48 +54,54 @@ document.addEventListener("DOMContentLoaded", function(){
     // Update every second 
     setInterval(updateDate, 1000);
 })
-
+// Function to check local storage for mode and set initial mode
+function setInitialMode() {
+    const mode = localStorage.getItem('mode');
+    if (mode === 'light') {
+        changeToNightMode();
+    } else {
+        changeToDayMode();
+    }
+    // Update images based on the mode
+    updateImages();
+}
+// Call setInitialMode when the page loads
+document.addEventListener('DOMContentLoaded', setInitialMode);
 
 let stopAnimation;
 // Store the ID of the previously clicked element
 let previousClickId = null;
 
 
-// gets the id from element that i click on 
 document.addEventListener('click', function (event) {
     // Log the ID of the element being clicked 
     console.log('clicked element ID:', event.target.id);
     clickElementId = event.target.id;
 
-    // Reset the images that are not being clicked on
-    if (clickElementId !== 'firstJob') {
-    document.getElementById('firstJob').src = './assets/images/job1/pixel-job1.png';
-    }
-    if (clickElementId !== 'secondJob') {
+    // Change the image source based on the clicked element
+    if (originalSources.hasOwnProperty(clickElementId)) {
+        //check local storage
+        let mode = localStorage.getItem("mode");
+        if (mode === "light"){
+            document.getElementById('firstJob').src = './assets/images/job1/job1-LightMode.png';
+            document.getElementById('secondJob').src = './assets/images/job2/job2-LightMode.png';
+            document.getElementById('thirdJob').src = './assets/images/job3/job3-LightMode.png';    
+            document.getElementById('fourthJob').src = './assets/images/job4/job4-LightMode.png';
+            
+        }else {
+            // Reset all images to pixelated
+        document.getElementById('firstJob').src = './assets/images/job1/pixel-job1.png';
         document.getElementById('secondJob').src = './assets/images/job2/pixel-job2.png';
-    }
-    if (clickElementId !== 'thirdJob') {
         document.getElementById('thirdJob').src = './assets/images/job3/pixel-job3.png';
-    }
-    if (clickElementId !== 'fourthJob') {
         document.getElementById('fourthJob').src = './assets/images/job4/pixel-job4.png';
+        }
+
+        
+
+        // Set the clicked image to clear
+        document.getElementById(clickElementId).src = originalSources[clickElementId];
     }
 
-    // Map element IDs to image paths
-const imagePaths = {
-    'firstJob': './assets/images/job1/job1-clear.png',
-    'secondJob': './assets/images/job2/job2-clear.png',
-    'thirdJob': './assets/images/job3/job3-clear.png',
-    'fourthJob': './assets/images/job4/job4-clear.png'
-};
-
-// Change the image source based on the clicked element
-if (imagePaths.hasOwnProperty(clickElementId)) {
-    console.log('clicked element ID:', clickElementId); 
-    document.getElementById(clickElementId).src = imagePaths[clickElementId];
-    console.log('clicked element ID:', clickElementId);  
-}
-  
     // Stop the current animation if there is one
     if (stopAnimation) {
         stopAnimation();
@@ -248,40 +254,47 @@ function dayNightText() {
 }
 
 
+// Function to toggle day/night mode and update local storage
 function toggleDayNight() {
-    if (dayNightModeElement.classList.contains("fa-solid") && dayNightModeElement.classList.contains("fa-moon")){
+    // Toggle day/night mode
+    if (dayNightModeElement.classList.contains('fa-solid') && dayNightModeElement.classList.contains('fa-moon')) {
         changeToNightMode();
-        dayNightText()
-        //change all images 
-
-        //profile img
-        imageElement.src = "./assets/images/profile/terminal-effect-lightMode.png";
-        imageElement.alt = "light mode profile pic";
-        //jobs img
-        job1.src = "./assets/images/job1/job1-LightMode.png";
-        job1.alt = "job1 pic light mode";
-        job2.src = "./assets/images/job2/job2-LightMode.png";
-        job2.alt = "job2 pic light mode";
-        job3.src = "./assets/images/job3/job3-LightMode.png";
-        job3.alt = "job3 pic light mode";
-        job4.src = "./assets/images/job4/job4-LightMode.png";
-        job4.alt = "job4 pic light mode";
+        localStorage.setItem('mode', 'light');
     } else {
         changeToDayMode();
-        dayNightText()
-        //change all images
+        localStorage.setItem('mode', 'dark');
+    }
 
-        //profile img
-        imageElement.src = "./assets/images/profile/profile-terminal-look.png";
-        imageElement.alt = "Dark mode profile pic";
-        //jobs img
-        job1.src = "././assets/images/job1/pixel-job1.png";
-        job1.alt = "job1 pic";
-        job2.src = "./assets/images/job2/pixel-job2.png";
-        job2.alt = "job2 pic";
-        job3.src = "./assets/images/job3/pixel-job3.png";
-        job3.alt = "job3 pic";
-        job4.src = "./assets/images/job4/pixel-job4.png";
-        job4.alt = "job4 pic";
-    }  
-};
+    // Update images based on the mode
+    updateImages();
+}
+
+// Function to update images based on the current mode
+function updateImages() {
+    const mode = localStorage.getItem('mode');
+    if (mode === 'light') {
+        // Change images to light mode
+        imageElement.src = './assets/images/profile/terminal-effect-lightMode.png';
+        imageElement.alt = 'light mode profile pic';
+        job1.src = './assets/images/job1/job1-LightMode.png';
+        job1.alt = 'job1 pic light mode';
+        job2.src = './assets/images/job2/job2-LightMode.png';
+        job2.alt = 'job2 pic light mode';
+        job3.src = './assets/images/job3/job3-LightMode.png';
+        job3.alt = 'job3 pic light mode';
+        job4.src = './assets/images/job4/job4-LightMode.png';
+        job4.alt = 'job4 pic light mode';
+    } else {
+        // Change images to dark mode
+        imageElement.src = './assets/images/profile/profile-terminal-look.png';
+        imageElement.alt = 'Dark mode profile pic';
+        job1.src = '././assets/images/job1/pixel-job1.png';
+        job1.alt = 'job1 pic';
+        job2.src = './assets/images/job2/pixel-job2.png';
+        job2.alt = 'job2 pic';
+        job3.src = './assets/images/job3/pixel-job3.png';
+        job3.alt = 'job3 pic';
+        job4.src = './assets/images/job4/pixel-job4.png';
+        job4.alt = 'job4 pic';
+    }
+}

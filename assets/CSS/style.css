@@ -80,24 +80,28 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
+    
 }
 
 /* this is the square around profile pic */
-.profile-square img {
-    width: 100%;
-    min-width: 150px;
-    max-width: 200px;
-    border: 3px solid var(--border-color);
-    height: 100%;
-    z-index: 0;
-}
 .profile-square {
     width: 55vw;
     min-width: 150px;
     max-width: 250px;
     height: 100%;
-    margin-left: 30px;
+    padding-left: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     z-index: 1;
+}
+.profile-square img {
+    width: 100%;
+    min-width: 150px;
+    max-width: 250px;
+    border: 3px solid var(--border-color);
+    height: auto;
+    z-index: 0;
 }
 
 
@@ -186,6 +190,7 @@ i {
     border-width: 2px 0px 2px 0px;
     margin-left: 10px;
     margin-right: 10px;
+    overflow: hidden;
 }
 
 #nav-box li {
@@ -274,6 +279,7 @@ h2 {
     color: var(--green);
     padding-left: 50px;
     position: relative;
+    font-size: 25px;
 }
 
 p {
@@ -284,6 +290,7 @@ p {
     padding-right: 50px;
     line-height: 2;
     margin-bottom: 0;
+    font-size: 20px;
     
 }
 
@@ -302,20 +309,25 @@ p {
     display: inline-block;
     background-color: var(--green);
     vertical-align: bottom;
-    width: 8px;
-    height: 16px;
+    width: 10px;
+    height: 20px;
+    bottom: 5px;
     animation: blink 1s infinite;
+}
+.typingAnimation-Description {
+    line-height: 2;
+    font-size: 20px;
 }
 .typingAnimation-Description::after{
     content: "";
     position: relative;
     display: inline-block;
     background-color: var(--green);
-    vertical-align: bottom;
-    width: 8px;
-    height: 16px;
+    vertical-align: middle;
+    width: 10px;
+    height: 20px;
+    bottom: 5px;
     animation: blink 1s infinite;
-
 }
 
 /* past work example section */
@@ -368,6 +380,7 @@ p {
     color: var(--green);
     margin-top: 30px;
     margin-bottom: 10px;
+    font-size: 25px;
 }
 #work-Description {
     color: var(--green);
@@ -377,12 +390,15 @@ p {
     color: var(--green);
     margin-top: 30px;
     margin-bottom: 10px;
+    font-size: 25px;
 }
 #work-tools {
     color: var(--green);
     list-style-type: disc;
     padding-left: 15px;
     margin-bottom: 30px;
+    line-height: 2;
+    font-size: 20px;
 }
 #work-link {
     display: none;
@@ -540,6 +556,7 @@ footer div:hover span{
   /*----adds glitch effect to text items--*/
   .crt {
     animation: textShadow 1.6s infinite;
+    
   }
   /*----adds scan effect to text items--*/
   .scanline {
@@ -621,6 +638,7 @@ footer div:hover span{
         width: 50%;
         display: flex;
         flex-direction: column;
+        margin: 0 auto;
     }
 
     #about-me-paragraph {
