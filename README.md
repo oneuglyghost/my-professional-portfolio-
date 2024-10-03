@@ -5,4 +5,5 @@ In this project I got to practice using the skill i have learned so far includin
 
 https://oneuglyghost.github.io/my-professional-portfolio-/
 
-![Screenshot 2023-11-25 at 10 07 17 PM (2)](https://github.com/oneuglyghost/my-professional-portfolio-/assets/111449648/4230d3d7-ff08-41ff-81f8-4238150251c0)
+
+<img width="1440" alt="Screenshot 2024-10-03 at 5 54 59 PM" src="https://github.com/user-attachments/assets/043d2b29-d921-4d49-8203-faa48c9d0482">
