@@ -5,38 +5,44 @@ var job1 = document.getElementById("firstJob")
 var job2 = document.getElementById("secondJob")
 var job3 = document.getElementById("thirdJob")
 var job4 = document.getElementById("fourthJob")
+var job5 = document.getElementById("fifthJob")
 
 // Store the original image sources
 const originalSources = {
-    firstJob: "./assets/images/job1/job1-clear.png",
+    firstJob: "./assets/images/job1/CodeCave-clear1.png",
     secondJob: "./assets/images/job2/job2-clear.png",
-    thirdJob: "./assets/job3/job3-clear.png",
-    fourthJob: "./assets/images/job4/job4-clear.png"
+    thirdJob: "./assets/images/job3/job3-clear.png",
+    fourthJob: "./assets/images/job4/job4-clear.png",
+    fifthJob:"./assets/images/job5/job5-clear.png"
 };
 
 const Work = {
-    firstJob: "--Horiseon Website--",
+    firstJob: "--Code Cave--",
     secondJob: "--Coding Quiz--",
     thirdJob: "--Work Day Scheduler--",
     fourthJob: "--Weather Forcast--",
+    fifthJob:"--Lechic--"
 };
 const workDescription = {
-    firstJob: "This project aims to enhance familiarity with website accessibility standards and provides an opportunity to further hone CSS skills by focusing on the organized structuring of HTML elements with semantic precision.",
+    firstJob: "CodeCave is a niche social website for web developers who are actively working on projects. It is designed with collaboration in mind and focuses on allowing developers of all fields and interests to complete projects togther for mutual benefit. Developers can sign-up to create new projects or find work from other users. They will then be able to comment and/or contribute on other users' projects.",
     secondJob:"This interactive program is a quiz designed to reinforce proficiency in HTML, CSS, and JavaScript, emphasizing logical reasoning and structural understanding. Upon launching the program, a 'Start Quiz' button initiates a timer set to 75 seconds. For every correct answer, participants earn 5 points, while each incorrect response deducts 5 seconds from the timer. Once all questions are answered or the timer reaches zero, participants are prompted to submit their score and initials. Highscores are stored locally, allowing users to restart the quiz or clear the highscore list at their convenience.",
     thirdJob:"This minimalist Daily Schedule Planner serves as a hands-on exercise in utilizing time.js, dynamically updating HTML, and applying CSS with the support of jQuery. The interface presents the current date prominently and displays a daily schedule from 9 AM to 5 PM. The background color of each time block adapts to the current time—gray for the past, red for the present, and green for the future. Users can click on any time block to input upcoming events, and upon clicking the corresponding save button, the entered text is stored in local storage. This ensures that the schedule remains intact even after refreshing or closing the page. Upon successful saving, a confirmation message is displayed, providing a seamless user experience.",
     fourthJob:"This web application was created as a hands-on exercise in utilizing HTML, CSS, and JavaScript, while also honing skills with the OpenWeatherAPI. The functionality of the app revolves around user searches for city names. When a city name is entered, it undergoes validation through the OpenWeatherAPI. If it's a valid search item, the information is saved to local storage and presented below the search button as a historical search item. Users can click on these past searches to retrieve and display detailed weather information, including the city name, current date, temperature, wind speed, humidity, and a 5-day forecast for the selected city.",
+    fifthJob:"The LeChic website was designed with simplicity and clarity in mind, using clean layouts and easy-to-digest colors to create a professional aesthetic that aligns with the beauty-focused theme of the cosmetology school. Initially developed in Spanish to cater to their predominantly Spanish-speaking clientele, the site also offers an option to switch to English, ensuring accessibility for a wider audience."
 };
 const workTools = {
-    firstJob: ["HTML","CSS"],
+    firstJob: ["AntDesign","Apollo/GraphQL","Axios","Bcrypt","Coolers","Cors","Eslint","Express","FontAwesome","Google Fonts","Insomnia","JWT","Mongoose","Nodemailer","Nodemon","React","Vite"],
     secondJob: ["HTML","CSS","JavaScript"],
     thirdJob: ["HTML","CSS","JavaScript","Time.js","jQuery"],
     fourthJob:["HTML","CSS","JavaScript","Time.js","OpenWeatherApi"],
+    fifthJob:["HTML","CSS","JavaScript"]
 }
 const workLinks = {
-    firstJob: "https://oneuglyghost.github.io/Horiseon-Social-Solution-Information-Website/",
+    firstJob: "https://codecave.onrender.com",
     secondJob: "https://oneuglyghost.github.io/module-4-code-quiz/",
     thirdJob: "https://oneuglyghost.github.io/Schedule-application/",
     fourthJob:"https://oneuglyghost.github.io/Weather-Updates/",
+    fifthJob:"https://www.lechic.me"
 };
 //display date at header
 document.addEventListener("DOMContentLoaded", function(){
@@ -83,17 +89,19 @@ document.addEventListener('click', function (event) {
         //check local storage
         let mode = localStorage.getItem("mode");
         if (mode === "light"){
-            document.getElementById('firstJob').src = './assets/images/job1/job1-LightMode.png';
+            document.getElementById('firstJob').src = './assets/images/job1/CodeCaveLightMode.png';
             document.getElementById('secondJob').src = './assets/images/job2/job2-LightMode.png';
             document.getElementById('thirdJob').src = './assets/images/job3/job3-LightMode.png';    
             document.getElementById('fourthJob').src = './assets/images/job4/job4-LightMode.png';
+            document.getElementById('fifthJob').src = './assets/images/job5/job5-LightMode.png';
             
         }else {
             // Reset all images to pixelated
-        document.getElementById('firstJob').src = './assets/images/job1/pixel-job1.png';
+        document.getElementById('firstJob').src = './assets/images/job1/codeCaveGreen.png';
         document.getElementById('secondJob').src = './assets/images/job2/pixel-job2.png';
         document.getElementById('thirdJob').src = './assets/images/job3/pixel-job3.png';
         document.getElementById('fourthJob').src = './assets/images/job4/pixel-job4.png';
+        document.getElementById('fifthJob').src = './assets/images/job5/job5Green.png';
         }
 
         
@@ -276,7 +284,7 @@ function updateImages() {
         // Change images to light mode
         imageElement.src = './assets/images/profile/terminal-effect-lightMode.png';
         imageElement.alt = 'light mode profile pic';
-        job1.src = './assets/images/job1/job1-LightMode.png';
+        job1.src = './assets/images/job1/CodeCaveLightMode.png';
         job1.alt = 'job1 pic light mode';
         job2.src = './assets/images/job2/job2-LightMode.png';
         job2.alt = 'job2 pic light mode';
@@ -284,11 +292,13 @@ function updateImages() {
         job3.alt = 'job3 pic light mode';
         job4.src = './assets/images/job4/job4-LightMode.png';
         job4.alt = 'job4 pic light mode';
+        job5.src = './assets/images/job5/job5-LightMode.png';
+        job5.alt = 'job5 pic light mode';
     } else {
         // Change images to dark mode
         imageElement.src = './assets/images/profile/profile-terminal-look.png';
         imageElement.alt = 'Dark mode profile pic';
-        job1.src = '././assets/images/job1/pixel-job1.png';
+        job1.src = '././assets/images/job1/codeCaveGreen.png';
         job1.alt = 'job1 pic';
         job2.src = './assets/images/job2/pixel-job2.png';
         job2.alt = 'job2 pic';
@@ -296,5 +306,7 @@ function updateImages() {
         job3.alt = 'job3 pic';
         job4.src = './assets/images/job4/pixel-job4.png';
         job4.alt = 'job4 pic';
+        job5.src = './assets/images/job5/job5Green.png';
+        job5.alt = 'job5 pic';
     }
 }
